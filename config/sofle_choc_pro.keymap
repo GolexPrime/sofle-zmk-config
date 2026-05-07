@@ -42,7 +42,7 @@
         };
 
         Umlaut_O {
-            bindings = <&kp DE_U_UMLAUT>;
+            bindings = <&kp DE_O_UMLAUT>;
             key-positions = <15 21>;
         };
     };
