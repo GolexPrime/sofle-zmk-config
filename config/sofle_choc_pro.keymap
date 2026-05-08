@@ -54,9 +54,14 @@
             key-positions = <54 55>;
         };
 
-        bottom_left_enter {
+        bottom_right_enter {
             bindings = <&kp ENTER>;
             key-positions = <49 48>;
+        };
+
+        left_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <54 53>;
         };
     };
 
@@ -160,7 +165,58 @@
             compatible = "zmk,behavior-tap-dance";
             label = "PLUS_ASTERISK";
             #binding-cells = <0>;
-            bindings = <&kp DE_PLUS>, <&kp DE_ASTERISK>;
+            bindings = <&kp DE_PLUS>, <&kp DE_ASTERISK>, <&kp DE_HASH>;
+
+            tapping-term-ms = <300>;
+        };
+
+        questionmark: questionmark {
+            compatible = "zmk,behavior-tap-dance";
+            label = "QUESTIONMARK";
+            #binding-cells = <0>;
+            bindings = <&kp DE_QUESTION>, <&kp DE_EXCLAMATION>;
+        };
+
+        dollar: dollar {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DOLLAR";
+            #binding-cells = <0>;
+            bindings = <&kp DE_DOLLAR>, <&kp DE_EURO>, <&kp DE_SECTION>;
+        };
+
+        percent: percent {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PERCENT";
+            #binding-cells = <0>;
+            bindings = <&kp DE_PERCENT>, <&kp DE_AMPERSAND>;
+        };
+
+        klammer: klammer {
+            compatible = "zmk,behavior-tap-dance";
+            label = "KLAMMER";
+            #binding-cells = <0>;
+            bindings = <&kp DE_LEFT_PARENTHESIS>, <&kp DE_RIGHT_PARENTHESIS>;
+        };
+
+        eckige_klammer: eckige_klammer {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ECKIGE_KLAMMER";
+            #binding-cells = <0>;
+            bindings = <&kp DE_LEFT_BRACKET>, <&kp DE_RIGHT_BRACKET>;
+        };
+
+        geschweifte: geschweifte {
+            compatible = "zmk,behavior-tap-dance";
+            label = "GESCHWEIFTE";
+            #binding-cells = <0>;
+            bindings = <&kp DE_LEFT_BRACE>, <&kp DE_RIGHT_BRACE>;
+        };
+
+        spitze_klammern: spitze_klammern {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SPITZE_KLAMMERN";
+            #binding-cells = <0>;
+            bindings = <&kp DE_LESS_THAN>, <&kp DE_GREATER_THAN>;
         };
     };
 
@@ -215,11 +271,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&trans     &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                        &kp F6    &kp F7    &kp F8     &kp F9     &kp F10   &kp F11
-&kp GRAVE  &kp N1     &kp N2     &kp DE_N7  &kp DE_N8  &kp DE_N9  &kp N6                       &kp N7    &kp N8     &kp N9     &kp N0    &kp F12
-&trans     &kp EXCL   &kp AT     &kp DE_N4  &kp DE_N5  &kp DE_N6  &kp CARET                    &kp AMPS  &kp ASTRK  &kp LPAR   &kp RPAR  &kp PIPE
-&trans     &kp EQUAL  &kp MINUS  &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_N0  &trans  &kp LBKT  &kp RBKT  &kp SEMI   &kp COLON  &kp BSLH  &trans
-                      &trans     &trans     &trans     &trans     &trans     &trans  &trans    &trans    &trans     &trans
+&trans     &kp F1     &kp F2        &kp F3     &kp F4     &kp F5                               &kp F6    &kp F7         &kp F8           &kp F9        &kp F10       &kp F11
+&kp GRAVE  &kp N1     &kp N2        &kp DE_N7  &kp DE_N8  &kp DE_N9  &spitze_klammern                    &klammer       &eckige_klammer  &geschweifte  &kp DE_EQUAL  &kp F12
+&trans     &kp EXCL   &kp DE_DOT    &kp DE_N4  &kp DE_N5  &kp DE_N6  &kp CARET                           &questionmark  &dollar          &percent      &kp RPAR      &kp PIPE
+&trans     &kp EQUAL  &kp DE_COMMA  &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_N0         &trans  &kp LBKT  &kp RBKT       &kp SEMI         &kp COLON     &kp BSLH      &trans
+                      &trans        &trans     &trans     &trans     &trans            &trans  &trans    &trans         &trans           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
@@ -236,11 +292,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                        &kp K_UNDO      &trans    &trans    &trans     &trans   &kp DELETE
-&trans      &kp INS       &kp PSCRN     &kp K_CMENU   &trans        &trans          &kp PG_UP                                           &trans    &kp UP    &trans     &kp N0   &trans
-&trans      &kp LALT      &kp LCTRL     &kp LSHFT     &trans        &kp CLCK        &kp PG_DN                                           &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
-&trans      &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &desktop_links  &kp K_VOLUME_DOWN  &kp K_VOLUME_UP  &desktop_right  &trans    &trans    &trans     &trans   &trans
-                          &trans        &trans        &trans        &trans          &trans             &trans           &trans          &trans    &trans    &trans
+&bt BT_CLR  &bt BT_SEL 0     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                        &kp K_UNDO      &trans           &trans    &trans           &trans   &kp DEL
+&trans      &kp INS          &kp PSCRN     &kp K_CMENU   &trans        &trans          &kp PG_UP                                           &kp DE_U_UMLAUT  &kp UP    &kp DE_O_UMLAUT  &kp N0   &trans
+&trans      &kp DE_A_UMLAUT  &kp LCTRL     &kp LSHFT     &trans        &kp CLCK        &kp PG_DN                                           &kp LEFT         &kp DOWN  &kp RIGHT        &kp DEL  &kp BSPC
+&trans      &kp K_UNDO       &kp K_CUT     &kp K_COPY    &kp K_PASTE   &desktop_links  &kp K_VOLUME_DOWN  &kp K_VOLUME_UP  &desktop_right  &trans           &trans    &trans           &trans   &trans
+                             &trans        &trans        &trans        &trans          &trans             &trans           &trans          &trans           &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
