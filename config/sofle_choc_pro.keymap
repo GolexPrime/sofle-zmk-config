@@ -97,6 +97,8 @@
             label = "MINUS";
             #binding-cells = <0>;
             bindings = <&kp DE_MINUS>, <&kp DE_UNDERSCORE>;
+
+            tapping-term-ms = <300>;
         };
 
         ticks: ticks {
@@ -218,6 +220,13 @@
             #binding-cells = <0>;
             bindings = <&kp DE_LESS_THAN>, <&kp DE_GREATER_THAN>;
         };
+
+        tilde_n: tilde_n {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TILDE_N";
+            #binding-cells = <0>;
+            bindings = <&kp DE_N>, <&kp DE_TILDE>;
+        };
     };
 
     macros {
@@ -253,7 +262,7 @@
 &kp GRAVE  &kp N1                &kp N2                        &kp N3                 &kp N4                   &kp N5                                     &kp N6     &kp N7                    &kp N8                      &kp N9                    &kp N0                                       &kp DE_QUESTION
 &escape    &at_q                 &kp W                         &kp E                  &kp R                    &kp T      &kp Y                                      &kp U                     &kp I                       &kp O                     &kp P                                        &kp BSPC
 &kp TAB    &hold_tap LCTRL DE_A  &hold_and_esszett LEFT_ALT 0  &hold_tap LSHIFT DE_D  &hold_tap LEFT_GUI DE_F  &kp G      &kp H                                      &hold_tap RIGHT_GUI DE_J  &hold_tap RIGHT_SHIFT DE_K  &hold_tap RIGHT_ALT DE_L  &hold_and_pipes_and_slashes RIGHT_CONTROL 0  &ticks
-&kp LSHFT  &kp Z                 &kp X                         &kp C                  &kp V                    &kp B      &desktop_links  &desktop_right  &kp N      &kp M                     &comma                      &dot                      &minus                                       &plus_asterisk
+&kp LSHFT  &kp Z                 &kp X                         &kp C                  &kp V                    &kp B      &desktop_links  &desktop_right  &tilde_n   &kp M                     &comma                      &dot                      &minus                                       &plus_asterisk
                                  &kp LGUI                      &kp LALT               &kp LCTRL                &mo LOWER  &kp SPACE       &kp SPACE       &mo RAISE  &kp RCTRL                 &kp RALT                    &kp RGUI
             >;
 
