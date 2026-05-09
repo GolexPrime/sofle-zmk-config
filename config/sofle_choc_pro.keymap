@@ -337,7 +337,7 @@
 &kp F1                        &kp F2                &kp F3                        &kp F4                 &kp F5                   &kp F6                                                   &kp F7                   &kp F8                      &kp F9                       &kp F10                   &kp F11                                      &kp F12
 &hold_tap DE_CARET ESC        &hold_tap DE_AT DE_Q  &kp W                         &kp E                  &kp R                    &kp T   &hold_tap DE_EXCLAMATION DE_Z                                             &hold_tap DE_QUESTION DE_U  &hold_tap DE_AMPERSAND DE_I  &hold_tap DE_PIPE DE_O    &kp P                                        &kp BSPC
 &kp TAB                       &hold_tap LCTRL DE_A  &hold_and_esszett LEFT_ALT 0  &hold_tap LSHIFT DE_D  &hold_tap LEFT_GUI DE_F  &kp G   &kp H                                                                     &hold_tap RIGHT_GUI DE_J    &hold_tap RIGHT_SHIFT DE_K   &hold_tap RIGHT_ALT DE_L  &hold_and_pipes_and_slashes RIGHT_CONTROL 0  &ticks
-&hold_and_left_shift LSHFT 0  &kp DE_Y              &kp X                         &kp C                  &kp V                    &kp B   &media_pausw_prev              &media_play_skip  &hold_tap DE_TILDE DE_N  &kp M                       &comma                       &dot                      &minus                                       &plus_asterisk
+&hold_and_left_shift LSHFT 0  &hold_tap DE_MU DE_Y  &kp X                         &kp C                  &kp V                    &kp B   &media_pausw_prev              &media_play_skip  &hold_tap DE_TILDE DE_N  &hold_tap DE_MU DE_M        &comma                       &dot                      &minus                                       &plus_asterisk
                                                     &kp LGUI                      &kp LALT               &kp LCTRL                &mo 2   &kp SPACE                      &kp SPACE         &mo 1                    &kp LEFT                    &kp DOWN                     &kp RIGHT
             >;
         };
@@ -353,11 +353,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans        &trans                                                        &trans             &trans         &trans    &trans     &trans           &trans
-&trans  &trans  &trans  &trans  &trans        &trans            &kp PG_UP                                                      &trans         &kp UP    &trans     &trans           &kp DEL
-&trans  &trans  &trans  &trans  &trans        &trans            &kp PG_DN                                                      &kp LEFT       &kp DOWN  &kp RIGHT  &kp BSPC         &kp DEL
-&trans  &trans  &trans  &trans  &kp LC(LEFT)  &kp LC(LG(LEFT))  &volume_down_and_mute  &volume_up_and_mute  &kp LC(LG(RIGHT))  &kp LC(RIGHT)  &trans    &trans     &screen_sniping  &macos_screen_selection
-                &trans  &trans  &trans        &trans            &trans                 &trans               &trans             &trans         &trans    &trans
+&trans  &trans  &trans  &trans  &trans            &trans                                                         &trans        &trans            &trans    &trans             &trans           &trans
+&trans  &trans  &trans  &trans  &trans            &trans             &kp PG_UP                                                 &kp LS(LC(LEFT))  &kp UP    &kp LC(LS(RIGHT))  &trans           &kp DEL
+&trans  &trans  &trans  &trans  &trans            &trans             &kp PG_DN                                                 &kp LEFT          &kp DOWN  &kp RIGHT          &kp BSPC         &kp DEL
+&trans  &trans  &trans  &trans  &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))  &volume_down_and_mute  &volume_up_and_mute  &kp LC(LEFT)  &kp LC(RIGHT)     &trans    &trans             &screen_sniping  &macos_screen_selection
+                &trans  &trans  &trans            &trans             &trans                 &trans               &trans        &trans            &trans    &trans
             >;
         };
 
