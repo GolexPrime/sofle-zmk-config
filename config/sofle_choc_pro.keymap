@@ -262,21 +262,12 @@
             #binding-cells = <0>;
             bindings = <&kp C_PLAY_PAUSE>, <&kp C_NEXT>;
         };
-    };
 
-    macros {
-        desktop_links: desktop_links {
-            compatible = "zmk,behavior-macro";
+        media_stop_prev: media_stop_prev {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MEDIA_STOP_PREV";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp LEFT_GUI &kp LEFT>;
-            label = "DESKTOP_LINKS";
-        };
-
-        desktop_right: desktop_right {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp LEFT_GUI &kp RIGHT_ARROW>;
-            label = "DESKTOP_RIGHT";
+            bindings = <&kp C_STOP>, <&kp C_PREV>;
         };
     };
 
@@ -294,11 +285,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp GRAVE                     &kp N1                &kp N2                        &kp N3                 &kp N4                   &kp N5                                       &kp N6     &kp N7                    &kp N8                      &kp N9                    &kp N0                                       &kp DE_QUESTION
-&escape                       &at_q                 &kp W                         &kp E                  &kp R                    &kp T      &kp Y                                        &kp U                     &kp I                       &kp O                     &kp P                                        &kp BSPC
-&kp TAB                       &hold_tap LCTRL DE_A  &hold_and_esszett LEFT_ALT 0  &hold_tap LSHIFT DE_D  &hold_tap LEFT_GUI DE_F  &kp G      &kp H                                        &hold_tap RIGHT_GUI DE_J  &hold_tap RIGHT_SHIFT DE_K  &hold_tap RIGHT_ALT DE_L  &hold_and_pipes_and_slashes RIGHT_CONTROL 0  &ticks
-&hold_and_left_shift LSHFT 0  &kp Z                 &kp X                         &kp C                  &kp V                    &kp B      &desktop_links  &media_play_skip  &tilde_n   &kp M                     &comma                      &dot                      &minus                                       &plus_asterisk
-                                                    &kp LGUI                      &kp LALT               &kp LCTRL                &mo LOWER  &kp SPACE       &kp SPACE         &mo RAISE  &kp RCTRL                 &kp RALT                    &kp RGUI
+&kp GRAVE                     &kp N1                &kp N2                        &kp N3                 &kp N4                   &kp N5                                         &kp N6     &kp N7                    &kp N8                      &kp N9                    &kp N0                                       &kp DE_QUESTION
+&escape                       &at_q                 &kp W                         &kp E                  &kp R                    &kp T      &kp Y                                          &kp U                     &kp I                       &kp O                     &kp P                                        &kp BSPC
+&kp TAB                       &hold_tap LCTRL DE_A  &hold_and_esszett LEFT_ALT 0  &hold_tap LSHIFT DE_D  &hold_tap LEFT_GUI DE_F  &kp G      &kp H                                          &hold_tap RIGHT_GUI DE_J  &hold_tap RIGHT_SHIFT DE_K  &hold_tap RIGHT_ALT DE_L  &hold_and_pipes_and_slashes RIGHT_CONTROL 0  &ticks
+&hold_and_left_shift LSHFT 0  &kp Z                 &kp X                         &kp C                  &kp V                    &kp B      &media_stop_prev  &media_play_skip  &tilde_n   &kp M                     &comma                      &dot                      &minus                                       &plus_asterisk
+                                                    &kp LGUI                      &kp LALT               &kp LCTRL                &mo LOWER  &kp SPACE         &kp SPACE         &mo RAISE  &kp RCTRL                 &kp RALT                    &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
@@ -339,7 +330,7 @@
 &bt BT_CLR  &bt BT_SEL 0     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                          &kp K_UNDO         &trans           &trans    &trans           &trans   &kp DEL
 &trans      &kp INS          &kp PSCRN     &kp K_CMENU   &trans        &trans            &kp PG_UP                                              &kp DE_U_UMLAUT  &kp UP    &kp DE_O_UMLAUT  &kp N0   &trans
 &trans      &kp DE_A_UMLAUT  &kp LCTRL     &kp LSHFT     &trans        &kp CLCK          &kp PG_DN                                              &kp LEFT         &kp DOWN  &kp RIGHT        &kp DEL  &kp BSPC
-&trans      &kp K_UNDO       &kp K_CUT     &kp K_COPY    &kp LC(LEFT)  &kp LC(LG(LEFT))  &kp K_VOLUME_DOWN  &kp K_VOLUME_UP  &kp LC(LG(RIGHT))  &kp LC(RIGHT)    &trans    &trans           &trans   &trans
+&trans      &kp K_UNDO       &kp K_CUT     &kp K_COPY    &kp LC(LEFT)  &kp LC(LG(LEFT))  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp LC(LG(RIGHT))  &kp LC(RIGHT)    &trans    &trans           &trans   &trans
                              &trans        &trans        &trans        &trans            &trans             &trans           &trans             &trans           &trans    &trans
             >;
 
