@@ -309,6 +309,15 @@
 
             tapping-term-ms = <150>;
         };
+
+        volume_up_and_mute: volume_up_and_mute {
+            compatible = "zmk,behavior-tap-dance";
+            label = "VOLUME_UP_AND_MUTE";
+            #binding-cells = <0>;
+            bindings = <&kp C_VOLUME_UP>, <&kp C_MUTE>;
+
+            tapping-term-ms = <150>;
+        };
     };
 
     keymap {
@@ -344,11 +353,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans        &trans                                                    &trans             &trans         &trans    &trans     &trans           &trans
-&trans  &trans  &trans  &trans  &trans        &trans            &kp PG_UP                                                  &trans         &kp UP    &trans     &trans           &kp DEL
-&trans  &trans  &trans  &trans  &trans        &trans            &kp PG_DN                                                  &kp LEFT       &kp DOWN  &kp RIGHT  &kp BSPC         &kp DEL
-&trans  &trans  &trans  &trans  &kp LC(LEFT)  &kp LC(LG(LEFT))  &volume_down_and_mute  &kp C_VOLUME_UP  &kp LC(LG(RIGHT))  &kp LC(RIGHT)  &trans    &trans     &screen_sniping  &macos_screen_selection
-                &trans  &trans  &trans        &trans            &trans                 &trans           &trans             &trans         &trans    &trans
+&trans  &trans  &trans  &trans  &trans        &trans                                                        &trans             &trans         &trans    &trans     &trans           &trans
+&trans  &trans  &trans  &trans  &trans        &trans            &kp PG_UP                                                      &trans         &kp UP    &trans     &trans           &kp DEL
+&trans  &trans  &trans  &trans  &trans        &trans            &kp PG_DN                                                      &kp LEFT       &kp DOWN  &kp RIGHT  &kp BSPC         &kp DEL
+&trans  &trans  &trans  &trans  &kp LC(LEFT)  &kp LC(LG(LEFT))  &volume_down_and_mute  &volume_up_and_mute  &kp LC(LG(RIGHT))  &kp LC(RIGHT)  &trans    &trans     &screen_sniping  &macos_screen_selection
+                &trans  &trans  &trans        &trans            &trans                 &trans               &trans             &trans         &trans    &trans
             >;
         };
 
