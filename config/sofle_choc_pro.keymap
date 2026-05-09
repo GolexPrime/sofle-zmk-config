@@ -228,9 +228,9 @@
             bindings = <&kp DE_N>, <&kp DE_TILDE>;
         };
 
-        caps_words: caps_words {
+        caps_words_manual: caps_words_manual {
             compatible = "zmk,behavior-caps-word";
-            label = "CAPS_WORDS";
+            label = "CAPS_WORDS_MANUAL";
             #binding-cells = <0>;
             continue-list = <UNDERSCORE BACKSPACE DELETE MINUS>;
         };
@@ -239,7 +239,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "LEFTSHIFT";
             #binding-cells = <0>;
-            bindings = <&sk LEFT_SHIFT>, <&caps_word>;
+            bindings = <&sk LEFT_SHIFT>, <&caps_words_manual>;
 
             tapping-term-ms = <250>;
         };
@@ -254,6 +254,13 @@
             require-prior-idle-ms = <250>;
             flavor = "balanced";
             quick-tap-ms = <150>;
+        };
+
+        media_play_skip: media_play_skip {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MEDIA_PLAY_SKIP";
+            #binding-cells = <0>;
+            bindings = <&kp C_PLAY_PAUSE>, <&kp C_NEXT>;
         };
     };
 
@@ -287,11 +294,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp GRAVE                     &kp N1                &kp N2                        &kp N3                 &kp N4                   &kp N5                                     &kp N6     &kp N7                    &kp N8                      &kp N9                    &kp N0                                       &kp DE_QUESTION
-&escape                       &at_q                 &kp W                         &kp E                  &kp R                    &kp T      &kp Y                                      &kp U                     &kp I                       &kp O                     &kp P                                        &kp BSPC
-&kp TAB                       &hold_tap LCTRL DE_A  &hold_and_esszett LEFT_ALT 0  &hold_tap LSHIFT DE_D  &hold_tap LEFT_GUI DE_F  &kp G      &kp H                                      &hold_tap RIGHT_GUI DE_J  &hold_tap RIGHT_SHIFT DE_K  &hold_tap RIGHT_ALT DE_L  &hold_and_pipes_and_slashes RIGHT_CONTROL 0  &ticks
-&hold_and_left_shift LSHFT 0  &kp Z                 &kp X                         &kp C                  &kp V                    &kp B      &desktop_links  &desktop_right  &tilde_n   &kp M                     &comma                      &dot                      &minus                                       &plus_asterisk
-                                                    &kp LGUI                      &kp LALT               &kp LCTRL                &mo LOWER  &kp SPACE       &kp SPACE       &mo RAISE  &kp RCTRL                 &kp RALT                    &kp RGUI
+&kp GRAVE                     &kp N1                &kp N2                        &kp N3                 &kp N4                   &kp N5                                       &kp N6     &kp N7                    &kp N8                      &kp N9                    &kp N0                                       &kp DE_QUESTION
+&escape                       &at_q                 &kp W                         &kp E                  &kp R                    &kp T      &kp Y                                        &kp U                     &kp I                       &kp O                     &kp P                                        &kp BSPC
+&kp TAB                       &hold_tap LCTRL DE_A  &hold_and_esszett LEFT_ALT 0  &hold_tap LSHIFT DE_D  &hold_tap LEFT_GUI DE_F  &kp G      &kp H                                        &hold_tap RIGHT_GUI DE_J  &hold_tap RIGHT_SHIFT DE_K  &hold_tap RIGHT_ALT DE_L  &hold_and_pipes_and_slashes RIGHT_CONTROL 0  &ticks
+&hold_and_left_shift LSHFT 0  &kp Z                 &kp X                         &kp C                  &kp V                    &kp B      &desktop_links  &media_play_skip  &tilde_n   &kp M                     &comma                      &dot                      &minus                                       &plus_asterisk
+                                                    &kp LGUI                      &kp LALT               &kp LCTRL                &mo LOWER  &kp SPACE       &kp SPACE         &mo RAISE  &kp RCTRL                 &kp RALT                    &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
