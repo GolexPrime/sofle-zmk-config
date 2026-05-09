@@ -68,6 +68,7 @@
             bindings = <&kp C_POWER>;
             key-positions = <42 43>;
             require-prior-idle-ms = <500>;
+            layers = <1>;
         };
 
         up {
