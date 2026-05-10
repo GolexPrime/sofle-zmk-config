@@ -64,8 +64,8 @@
             key-positions = <54 53>;
         };
 
-        poweroff {
-            bindings = <&kp C_POWER>;
+        sleep {
+            bindings = <&kp C_SLEEP>;
             key-positions = <43 42>;
             require-prior-idle-ms = <500>;
         };
