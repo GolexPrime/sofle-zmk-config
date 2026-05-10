@@ -149,7 +149,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ESSZETT";
             #binding-cells = <0>;
-            bindings = <&kp DE_S>, <&kp DE_SZ>;
+            bindings = <&kp DE_S>, <&trans>, <&kp DE_SZ>;
         };
 
         mal_geteilt: mal_geteilt {
