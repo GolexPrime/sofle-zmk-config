@@ -374,11 +374,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans            &trans                                                         &trans        &trans            &trans    &trans             &trans           &trans
-&trans  &trans  &trans  &trans  &trans            &trans             &kp PG_UP                                                 &kp LS(LC(LEFT))  &kp UP    &kp LC(LS(RIGHT))  &trans           &kp DEL
-&trans  &trans  &trans  &trans  &trans            &trans             &kp PG_DN                                                 &kp LEFT          &kp DOWN  &kp RIGHT          &kp BSPC         &kp DEL
-&trans  &trans  &trans  &trans  &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))  &volume_down_and_mute  &volume_up_and_mute  &kp LC(LEFT)  &kp LC(RIGHT)     &trans    &trans             &screen_sniping  &macos_screen_selection
-                &trans  &trans  &trans            &trans             &trans                 &trans               &trans        &trans            &trans    &trans
+&none  &none  &none  &none  &none             &none                                                          &none         &none             &none     &none              &none            &none
+&none  &none  &none  &none  &none             &none              &kp PG_UP                                                 &kp LS(LC(LEFT))  &kp UP    &kp LC(LS(RIGHT))  &kp BSPC         &kp DEL
+&none  &none  &none  &none  &none             &none              &kp PG_DN                                                 &kp LEFT          &kp DOWN  &kp RIGHT          &kp BSPC         &kp DEL
+&none  &none  &none  &none  &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))  &volume_down_and_mute  &volume_up_and_mute  &kp LC(LEFT)  &kp LC(RIGHT)     &none     &none              &screen_sniping  &macos_screen_selection
+              &none  &none  &none             &none              &none                  &none                &none         &none             &none     &none
             >;
         };
 
@@ -393,11 +393,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&trans   &trans     &trans        &trans     &trans     &trans                               &trans  &trans         &trans           &trans        &trans        &trans
-&kp F12  &kp DEL    &mal_geteilt  &kp DE_N7  &kp DE_N8  &kp DE_N9  &spitze_klammern                  &klammer       &eckige_klammer  &geschweifte  &kp DE_EQUAL  &trans
-&kp F11  &kp BSPC   &plus_minus   &kp DE_N4  &kp DE_N5  &kp DE_N6  &trans                            &questionmark  &dollar          &percent      &kp DE_EQUAL  &trans
-&kp F1   &kp EQUAL  &dot_coma     &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_N0         &trans  &trans  &trans         &trans           &trans        &trans        &trans
-                    &trans        &trans     &trans     &trans     &trans            &trans  &trans  &trans         &trans           &trans
+&none    &none      &none         &none      &none      &none                               &none  &none          &none            &none         &none         &none
+&kp F12  &kp DEL    &mal_geteilt  &kp DE_N7  &kp DE_N8  &kp DE_N9  &spitze_klammern                &klammer       &eckige_klammer  &geschweifte  &kp DE_EQUAL  &none
+&kp F11  &kp BSPC   &plus_minus   &kp DE_N4  &kp DE_N5  &kp DE_N6  &none                           &questionmark  &dollar          &percent      &kp DE_EQUAL  &none
+&kp F1   &kp EQUAL  &dot_coma     &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_N0         &none  &none  &none          &none            &none         &none         &none
+                    &none         &none      &none      &none      &none             &none  &none  &none          &none            &none
             >;
         };
 
