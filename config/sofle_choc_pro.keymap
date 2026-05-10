@@ -149,7 +149,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ESSZETT";
             #binding-cells = <0>;
-            bindings = <&kp DE_S>, <&trans>, <&kp DE_SZ>;
+            bindings = <&kp DE_S>, <&doppel_s>, <&kp DE_SZ>;
         };
 
         mal_geteilt: mal_geteilt {
@@ -338,6 +338,15 @@
             bindings = <&kp C_VOLUME_UP>, <&kp C_MUTE>;
 
             tapping-term-ms = <150>;
+        };
+    };
+
+    macros {
+        doppel_s: doppel_s {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp S>;
+            label = "DOPPEL_S";
         };
     };
 
