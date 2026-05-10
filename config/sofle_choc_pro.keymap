@@ -66,15 +66,36 @@
 
         poweroff {
             bindings = <&kp C_POWER>;
-            key-positions = <42 43>;
+            key-positions = <43 42>;
             require-prior-idle-ms = <500>;
-            layers = <1>;
         };
 
         up {
             bindings = <&kp UP>;
             key-positions = <58 57>;
             layers = <0>;
+        };
+
+        up2 {
+            bindings = <&kp UP>;
+            key-positions = <58 57 59>;
+            layers = <0>;
+        };
+
+        up3 {
+            bindings = <&kp UP>;
+            key-positions = <58 59>;
+            layers = <0>;
+        };
+
+        alt_f4 {
+            bindings = <&kp LA(F4)>;
+            key-positions = <17 16 15>;
+        };
+
+        command_q {
+            bindings = <&kp LG(DE_Q)>;
+            key-positions = <18 19 20>;
         };
     };
 
