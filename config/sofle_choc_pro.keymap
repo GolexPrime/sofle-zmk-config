@@ -401,14 +401,14 @@
             compatible = "zmk,behavior-tap-dance";
             label = "BROWSER_TAB_LEFT";
             #binding-cells = <0>;
-            bindings = <&kp LC(TAB)>, <&kp LS(LC(LEFT))>;
+            bindings = <&kp LC(LS(TAB))>, <&kp LS(LC(LEFT))>;
         };
 
         browser_tab_rechts: browser_tab_rechts {
             compatible = "zmk,behavior-tap-dance";
             label = "BROWSER_TAB_RECHTS";
             #binding-cells = <0>;
-            bindings = <&kp LC(LS(TAB))>, <&kp LS(LC(RIGHT))>;
+            bindings = <&kp LC(TAB)>, <&kp LS(LC(RIGHT))>;
         };
     };
 
