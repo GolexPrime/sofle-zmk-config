@@ -449,6 +449,41 @@
             bindings = <&bt BT_SEL 4 &to 4>;
             label = "BT4_MAC";
         };
+
+        bt0_win: bt0_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 0 &to 0>;
+            label = "BT0_WIN";
+        };
+
+        bt1_win: bt1_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1 &to 0>;
+            label = "BT1_WIN";
+        };
+
+        bt2_win: bt2_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 2 &to 0>;
+            label = "BT2_WIN";
+        };
+
+        bt3_win: bt3_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 3 &to 0>;
+            label = "BT3_WIN";
+        };
+
+        bt4_win: bt4_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 4 &to 0>;
+            label = "BT4_WIN";
+        };
     };
 
     keymap {
@@ -521,11 +556,11 @@
 
             display-name = "adjust";
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                             &tog MAC  &none         &none         &none         &none         &none
-&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF  &bt0_mac                          &bt1_mac      &bt2_mac      &bt3_mac      &bt4_mac      &none
-&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none            &bt BT_SEL 0                      &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none
-&none              &none            &none            &none            &none            &none            &rgb_ug RGB_TOG  &none  &none     &none         &none         &none         &none         &none
-                                    &none            &none            &none            &none            &none            &none  &none     &none         &none         &none
+&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                             &tog MAC  &none     &none     &none     &none     &none
+&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF  &bt0_mac                          &bt1_mac  &bt2_mac  &bt3_mac  &bt4_mac  &none
+&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none            &bt0_win                          &bt1_win  &bt2_win  &bt3_win  &bt4_win  &none
+&none              &none            &none            &none            &none            &none            &rgb_ug RGB_TOG  &none  &none     &none     &none     &none     &none     &none
+                                    &none            &none            &none            &none            &none            &none  &none     &none     &none     &none
             >;
         };
 
