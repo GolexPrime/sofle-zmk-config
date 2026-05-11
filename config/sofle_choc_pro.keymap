@@ -92,7 +92,7 @@
         up2 {
             bindings = <&kp UP>;
             key-positions = <58 57 59>;
-            layers = <0>;
+            layers = <0 4>;
         };
 
         up3 {
@@ -103,12 +103,14 @@
 
         alt_f4 {
             bindings = <&kp LA(F4)>;
-            key-positions = <17 16 15 14>;
+            key-positions = <18 19 20>;
+            layers = <0>;
         };
 
         command_q {
             bindings = <&kp LG(DE_Q)>;
-            key-positions = <18 19 20 21>;
+            key-positions = <18 19 20>;
+            layers = <4>;
         };
     };
 
