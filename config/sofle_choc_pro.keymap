@@ -15,6 +15,9 @@
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
+#define MAC 4
+#define MAC_LOWER 5
+#define MAC_RAISE 6
 
 / {
     // Activate ADJUST layer by pressing raise and lower
@@ -25,6 +28,16 @@
         adjust_layer {
             if-layers = <2 1>;
             then-layer = <3>;
+        };
+
+        mac_lower_layer {
+            if-layers = <4 2>;
+            then-layer = <5>;
+        };
+
+        mac_raise_layer {
+            if-layers = <4 1>;
+            then-layer = <6>;
         };
     };
 
@@ -188,6 +201,42 @@
             require-prior-idle-ms = <200>;
             flavor = "balanced";
             quick-tap-ms = <150>;
+        };
+
+        pipes_and_slashes_mac: pipes_and_slashes_mac {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PIPES_AND_SLASHES_MAC";
+            #binding-cells = <0>;
+            // 1x = /   2x = \ (macOS: Opt+Shift+7)   3x = | (macOS: Opt+7)
+            bindings = <&kp DE_SLASH>, <&kp LS(LA(N7))>, <&kp LA(N7)>;
+        };
+
+        hold_and_pipes_and_slashes_mac: hold_and_pipes_and_slashes_mac {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_AND_PIPES_AND_SLASHES_MAC";
+            bindings = <&kp>, <&pipes_and_slashes_mac>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            require-prior-idle-ms = <200>;
+            flavor = "balanced";
+            quick-tap-ms = <150>;
+        };
+
+        geschweifte_mac: geschweifte_mac {
+            compatible = "zmk,behavior-tap-dance";
+            label = "GESCHWEIFTE_MAC";
+            #binding-cells = <0>;
+            // { = Opt+8   } = Opt+9
+            bindings = <&kp LA(N8)>, <&kp LA(N9)>;
+        };
+
+        eckige_klammer_mac: eckige_klammer_mac {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ECKIGE_KLAMMER_MAC";
+            #binding-cells = <0>;
+            // [ = Opt+5   ] = Opt+6
+            bindings = <&kp LA(N5)>, <&kp LA(N6)>;
         };
 
         plus_minus: plus_minus {
@@ -424,7 +473,7 @@
 
         adjust_layer {
             // ----------------------------------------------------------------------------------------------------------------------------
-            // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
+            // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  | MAC  |      |       |      |       |       |
             // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
             // |        | RGB_BRD | RGB_BRI |         |         |         |                  |      |      |       |      |       |       |
             // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
@@ -432,11 +481,60 @@
 
             display-name = "adjust";
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                             &none  &none  &none  &none  &none  &none
-&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF  &none                          &none  &none  &none  &none  &none
-&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none            &none                          &none  &none  &none  &none  &none
+&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                             &tog MAC  &none  &none  &none  &none  &none
+&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF  &none                             &none  &none  &none  &none  &none
+&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none            &none                             &none  &none  &none  &none  &none
 &none              &none            &none            &none            &none            &none            &rgb_ug RGB_TOG  &none  &none  &none  &none  &none  &none  &none
                                     &none            &none            &none            &none            &none            &none  &none  &none  &none  &none
+            >;
+        };
+
+        mac_layer {
+            // Override keys whose AltGr combos differ between Windows DE and macOS DE.
+            // All other positions are &trans (fall through to default_layer).
+            //
+            // Changed positions:
+            //   Q  (row2, col2): hold @ → LA(L)       macOS Opt+L = @
+            //   O  (row2, col10): hold | → LA(N7)     macOS Opt+7 = |
+            //   ;  (row3, col11): pipes_and_slashes_mac  \ = LS(LA(N7)), | = LA(N7)
+            //   N  (row4, col9): hold ~ → LA(N)       macOS Opt+N = ~
+
+            display-name = "mac";
+            bindings = <
+&trans  &trans                      &trans  &trans  &trans  &trans  &trans                                                                    &trans  &trans  &trans                                       &trans  &trans
+&trans  &hold_tap LA(L) DE_Q        &trans  &trans  &trans  &trans  &trans                                                                    &trans  &trans  &hold_tap LA(N7) DE_O                        &trans  &trans
+&trans  &trans                      &trans  &trans  &trans  &trans  &trans                                                                    &trans  &trans  &trans  &hold_and_pipes_and_slashes_mac RIGHT_CONTROL 0  &trans
+&trans  &trans                      &trans  &trans  &trans  &trans  &trans          &trans  &hold_tap LA(N) DE_N  &trans  &trans  &trans  &trans  &trans
+                                    &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        mac_lower_layer {
+            // Active when mac + lower are both held.
+            // Restores lower_layer bindings shadowed by mac_layer,
+            // and provides mac variants of [ ] { }.
+
+            display-name = "mac-lo";
+            bindings = <
+&trans  &trans      &trans  &trans  &trans  &trans  &trans                  &trans  &trans               &trans               &trans  &trans
+&trans  &kp DEL     &trans  &trans  &trans  &trans  &trans                  &trans  &eckige_klammer_mac  &geschweifte_mac     &trans  &trans
+&trans  &trans      &trans  &trans  &trans  &trans  &trans                  &trans  &trans               &trans  &kp DE_EQUAL  &trans
+&trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        mac_raise_layer {
+            // Active when mac + raise are both held.
+            // Restores raise_layer bindings shadowed by mac_layer.
+
+            display-name = "mac-ra";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                        &trans  &trans  &trans              &trans      &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                        &trans  &trans  &kp LC(LS(RIGHT))   &trans      &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                        &trans  &trans  &trans  &kp BSPC    &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LC(LEFT)  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
