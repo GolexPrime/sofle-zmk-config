@@ -77,12 +77,6 @@
             key-positions = <54 53>;
         };
 
-        sleep {
-            bindings = <&kp C_SLEEP>;
-            key-positions = <43 42>;
-            require-prior-idle-ms = <500>;
-        };
-
         up {
             bindings = <&kp UP>;
             key-positions = <58 57>;
@@ -487,11 +481,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&none   &none  &none   &none   &none             &none                                                          &none         &none             &none     &none              &none            &none
-&trans  &none  &none   &none   &none             &none              &kp PG_UP                                                 &kp LS(LC(LEFT))  &kp UP    &kp LC(LS(RIGHT))  &kp BSPC         &kp DEL
-&trans  &none  &none   &none   &none             &none              &kp PG_DN                                                 &kp LEFT          &kp DOWN  &kp RIGHT          &kp BSPC         &kp DEL
-&trans  &none  &none   &none   &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))  &volume_down_and_mute  &volume_up_and_mute  &kp LC(LEFT)  &kp LC(RIGHT)     &none     &none              &screen_sniping  &macos_screen_selection
-               &trans  &trans  &trans            &trans             &trans                 &trans               &trans        &trans            &trans    &trans
+&none   &none  &none   &none   &none   &none                                               &none             &none              &none     &none              &none            &none
+&trans  &none  &none   &none   &none   &none   &kp PG_UP                                                     &kp LS(LC(LEFT))   &kp UP    &kp LC(LS(RIGHT))  &kp BSPC         &kp DEL
+&trans  &none  &none   &none   &none   &none   &kp PG_DN                                                     &kp LEFT           &kp DOWN  &kp RIGHT          &kp BSPC         &kp DEL
+&trans  &none  &none   &none   &none   &none   &volume_down_and_mute  &volume_up_and_mute  &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))  &none     &none              &screen_sniping  &macos_screen_selection
+               &trans  &trans  &trans  &trans  &trans                 &trans               &trans            &trans             &trans    &trans
             >;
         };
 
@@ -573,11 +567,11 @@
 
             display-name = "mac-ra";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans        &trans  &trans  &trans             &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                        &trans  &trans  &kp LC(LS(RIGHT))  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans             &kp BSPC  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LC(LEFT)  &trans  &trans  &trans             &trans    &trans
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans        &trans         &trans  &trans             &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                        &trans         &trans  &kp LC(LS(RIGHT))  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                        &trans         &trans  &trans             &kp BSPC  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LC(LEFT)  &kp LC(RIGHT)  &trans  &trans             &trans    &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans         &trans  &trans
             >;
         };
     };
