@@ -126,6 +126,8 @@
             label = "COMMA";
             #binding-cells = <0>;
             bindings = <&kp DE_COMMA>, <&kp DE_SEMI>;
+
+            tapping-term-ms = <300>;
         };
 
         dot: dot {
@@ -133,6 +135,8 @@
             label = "DOT";
             #binding-cells = <0>;
             bindings = <&kp DE_DOT>, <&kp DE_COLON>;
+
+            tapping-term-ms = <300>;
         };
 
         minus: minus {
@@ -152,6 +156,8 @@
                 <&kp DE_APOSTROPHE>,
                 <&kp DE_DOUBLE_QUOTES>,
                 <&kp DE_GRAVE>;
+
+            tapping-term-ms = <300>;
         };
 
         esszett: esszett {
@@ -159,6 +165,8 @@
             label = "ESSZETT";
             #binding-cells = <0>;
             bindings = <&kp DE_S>, <&doppel_s>, <&kp DE_SZ>;
+
+            tapping-term-ms = <300>;
         };
 
         mal_geteilt: mal_geteilt {
@@ -185,6 +193,8 @@
             label = "PIPES_AND_SLASHES";
             #binding-cells = <0>;
             bindings = <&kp DE_SLASH>, <&kp DE_BACKSLASH>, <&kp DE_PIPE>;
+
+            tapping-term-ms = <300>;
         };
 
         hold_and_pipes_and_slashes: hold_and_pipes_and_slashes {
@@ -207,6 +217,8 @@
             // 1x = /   2x = \ (macOS: Opt+Shift+7)   3x = | (macOS: Opt+7)
 
             bindings = <&kp DE_SLASH>, <&kp LS(LA(N7))>, <&kp LA(N7)>;
+
+            tapping-term-ms = <300>;
         };
 
         hold_and_pipes_and_slashes_mac: hold_and_pipes_and_slashes_mac {
@@ -229,6 +241,8 @@
             // { = Opt+8   } = Opt+9
 
             bindings = <&kp LA(N8)>, <&kp LA(N9)>;
+
+            tapping-term-ms = <300>;
         };
 
         eckige_klammer_mac: eckige_klammer_mac {
@@ -239,6 +253,8 @@
             // [ = Opt+5   ] = Opt+6
 
             bindings = <&kp LA(N5)>, <&kp LA(N6)>;
+
+            tapping-term-ms = <300>;
         };
 
         plus_minus: plus_minus {
@@ -246,6 +262,8 @@
             label = "PLUS_MINUS";
             #binding-cells = <0>;
             bindings = <&kp DE_PLUS>, <&kp DE_MINUS>;
+
+            tapping-term-ms = <300>;
         };
 
         plus_asterisk: plus_asterisk {
@@ -262,6 +280,8 @@
             label = "QUESTIONMARK";
             #binding-cells = <0>;
             bindings = <&kp DE_QUESTION>, <&kp DE_EXCLAMATION>;
+
+            tapping-term-ms = <300>;
         };
 
         dollar: dollar {
@@ -269,6 +289,8 @@
             label = "DOLLAR";
             #binding-cells = <0>;
             bindings = <&kp DE_DOLLAR>, <&kp DE_EURO>, <&kp DE_SECTION>;
+
+            tapping-term-ms = <300>;
         };
 
         percent: percent {
@@ -276,6 +298,8 @@
             label = "PERCENT";
             #binding-cells = <0>;
             bindings = <&kp DE_PERCENT>, <&kp DE_AMPERSAND>;
+
+            tapping-term-ms = <300>;
         };
 
         klammer: klammer {
@@ -283,6 +307,8 @@
             label = "KLAMMER";
             #binding-cells = <0>;
             bindings = <&kp DE_LEFT_PARENTHESIS>, <&kp DE_RIGHT_PARENTHESIS>;
+
+            tapping-term-ms = <300>;
         };
 
         eckige_klammer: eckige_klammer {
@@ -290,6 +316,8 @@
             label = "ECKIGE_KLAMMER";
             #binding-cells = <0>;
             bindings = <&kp DE_LEFT_BRACKET>, <&kp DE_RIGHT_BRACKET>;
+
+            tapping-term-ms = <300>;
         };
 
         geschweifte: geschweifte {
@@ -297,6 +325,8 @@
             label = "GESCHWEIFTE";
             #binding-cells = <0>;
             bindings = <&kp DE_LEFT_BRACE>, <&kp DE_RIGHT_BRACE>;
+
+            tapping-term-ms = <300>;
         };
 
         spitze_klammern: spitze_klammern {
@@ -304,6 +334,8 @@
             label = "SPITZE_KLAMMERN";
             #binding-cells = <0>;
             bindings = <&kp DE_LESS_THAN>, <&kp DE_GREATER_THAN>;
+
+            tapping-term-ms = <300>;
         };
 
         dot_coma: dot_coma {
@@ -311,13 +343,15 @@
             label = "DOT_COMA";
             #binding-cells = <0>;
             bindings = <&kp DE_COMMA>, <&kp DE_DOT>;
+
+            tapping-term-ms = <300>;
         };
 
         caps_words_manual: caps_words_manual {
             compatible = "zmk,behavior-caps-word";
             label = "CAPS_WORDS_MANUAL";
             #binding-cells = <0>;
-            continue-list = <UNDERSCORE BACKSPACE DELETE MINUS>;
+            continue-list = <UNDERSCORE BACKSPACE DELETE MINUS UNDER>;
         };
 
         leftshift: leftshift {
@@ -326,7 +360,7 @@
             #binding-cells = <0>;
             bindings = <&sk LEFT_SHIFT>, <&caps_words_manual>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <300>;
         };
 
         hold_and_left_shift: hold_and_left_shift {
@@ -346,6 +380,8 @@
             label = "MEDIA_PLAY_SKIP";
             #binding-cells = <0>;
             bindings = <&kp C_PLAY_PAUSE>, <&kp C_NEXT>;
+
+            tapping-term-ms = <300>;
         };
 
         media_pausw_prev: media_pausw_prev {
@@ -353,6 +389,8 @@
             label = "MEDIA_PAUSW_PREV";
             #binding-cells = <0>;
             bindings = <&kp C_PLAY_PAUSE>, <&kp C_PREV>;
+
+            tapping-term-ms = <300>;
         };
 
         macos_screen_selection: macos_screen_selection {
@@ -373,7 +411,7 @@
             #binding-cells = <0>;
             bindings = <&kp C_VOLUME_DOWN>, <&kp C_MUTE>;
 
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
         };
 
         volume_up_and_mute: volume_up_and_mute {
@@ -382,7 +420,7 @@
             #binding-cells = <0>;
             bindings = <&kp C_VOLUME_UP>, <&kp C_MUTE>;
 
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
         };
 
         hold_plus_asterisk: hold_plus_asterisk {
@@ -402,6 +440,8 @@
             label = "BROWSER_TAB_LEFT";
             #binding-cells = <0>;
             bindings = <&kp LC(LS(TAB))>, <&kp LS(LC(LEFT))>;
+
+            tapping-term-ms = <300>;
         };
 
         browser_tab_rechts: browser_tab_rechts {
@@ -409,6 +449,8 @@
             label = "BROWSER_TAB_RECHTS";
             #binding-cells = <0>;
             bindings = <&kp LC(TAB)>, <&kp LS(LC(RIGHT))>;
+
+            tapping-term-ms = <300>;
         };
     };
 
@@ -610,10 +652,10 @@
 
             display-name = "mac-ra";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans        &trans         &trans  &trans             &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                        &trans         &trans  &kp LC(LS(RIGHT))  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                        &kp LEFT       &trans  &trans             &kp BSPC  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LC(LEFT)  &kp LC(RIGHT)  &trans  &trans             &trans    &macos_screen_selection
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans        &trans         &trans  &trans               &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                        &trans         &trans  &browser_tab_rechts  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                        &kp LEFT       &trans  &trans               &kp BSPC  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LC(LEFT)  &kp LC(RIGHT)  &trans  &trans               &trans    &macos_screen_selection
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans         &trans  &trans
             >;
         };
