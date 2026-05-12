@@ -598,7 +598,7 @@
             bindings = <
 &trans  &trans   &trans  &trans  &trans  &trans                  &trans  &trans  &trans               &trans            &trans        &trans
 &trans  &kp DEL  &trans  &trans  &trans  &trans  &trans                  &trans  &eckige_klammer_mac  &geschweifte_mac  &trans        &trans
-&trans  &trans   &trans  &trans  &trans  &trans  &trans                  &trans  &trans               &trans            &kp DE_EQUAL  &trans
+&trans  &trans   &trans  &trans  &trans  &trans  &trans                  &questionmark  &trans               &trans            &kp DE_EQUAL  &trans
 &trans  &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans               &trans            &trans        &trans
                  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans               &trans
             >;
@@ -612,7 +612,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans        &trans         &trans  &trans             &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                        &trans         &trans  &kp LC(LS(RIGHT))  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                        &trans         &trans  &trans             &kp BSPC  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                        &kp LEFT       &trans  &trans             &kp BSPC  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LC(LEFT)  &kp LC(RIGHT)  &trans  &trans             &trans    &macos_screen_selection
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans         &trans  &trans
             >;
