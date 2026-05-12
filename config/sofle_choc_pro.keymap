@@ -106,13 +106,6 @@
             key-positions = <18 19 20>;
             layers = <4>;
         };
-
-        mac_sleep {
-            bindings = <&mac_sleep>;
-            key-positions = <42 43>;
-            layers = <6 5>;
-            require-prior-idle-ms = <1000>;
-        };
     };
 
     behaviors {
@@ -542,7 +535,7 @@
         mac_sleep: mac_sleep {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp SPACE &kp S &kp L &kp E &kp E &kp P &kp ENTER>;
+            bindings = <&kp LG(SPACE) &kp S &kp L &kp E &kp E &kp P &kp ENTER>;
             label = "MAC_SLEEP";
         };
     };
@@ -617,7 +610,7 @@
 
             display-name = "adjust";
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                             &tog MAC  &none     &none     &none     &none     &none
+&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                             &tog MAC  &none     &none     &none     &none     &mac_sleep
 &ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF  &bt0_mac                          &bt1_mac  &bt2_mac  &bt3_mac  &bt4_mac  &none
 &none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none            &bt0_win                          &bt1_win  &bt2_win  &bt3_win  &bt4_win  &none
 &none              &none            &none            &none            &none            &none            &rgb_ug RGB_TOG  &none  &none     &none     &none     &none     &none     &none
