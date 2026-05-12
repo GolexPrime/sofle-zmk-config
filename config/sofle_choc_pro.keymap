@@ -641,7 +641,7 @@
 
             display-name = "mac-ra";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans        &trans         &trans            &trans               &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans        &trans         &trans            &trans               &trans    &mac_sleep
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                        &trans         &trans            &browser_tab_rechts  &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                        &kp LEFT       &trans            &trans               &kp BSPC  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LC(LEFT)  &kp LC(RIGHT)  &kp LC(LG(DE_F))  &trans               &trans    &macos_screen_selection
