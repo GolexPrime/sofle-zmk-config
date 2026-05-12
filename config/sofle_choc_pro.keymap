@@ -400,7 +400,7 @@
             bindings =
                 <&kp LG(LS(DE_N4))>,
                 <&kp LG(LS(LC(DE_N4)))>,
-                <&kp LS(LC(LG(DE_N5)))>;
+                <&kp LS(LG(DE_N5))>;
 
             tapping-term-ms = <300>;
         };
@@ -652,11 +652,11 @@
 
             display-name = "mac-ra";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans        &trans         &trans  &trans               &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                        &trans         &trans  &browser_tab_rechts  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                        &kp LEFT       &trans  &trans               &kp BSPC  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LC(LEFT)  &kp LC(RIGHT)  &trans  &trans               &trans    &macos_screen_selection
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans         &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                            &trans        &trans         &trans  &trans               &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                  &trans         &trans  &browser_tab_rechts  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp LC(LG(DE_F))                        &kp LEFT       &trans  &trans               &kp BSPC  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans  &kp LC(LEFT)  &kp LC(RIGHT)  &trans  &trans               &trans    &macos_screen_selection
+                &trans  &trans  &trans  &trans  &trans            &trans  &trans        &trans         &trans  &trans
             >;
         };
     };
