@@ -27,17 +27,17 @@
 
         adjust_layer {
             if-layers = <2 1>;
-            then-layer = <3>;
+            then-layer = <6>;
         };
 
         mac_lower_layer {
-            if-layers = <4 2>;
-            then-layer = <5>;
+            if-layers = <3 2>;
+            then-layer = <4>;
         };
 
         mac_raise_layer {
-            if-layers = <4 1>;
-            then-layer = <6>;
+            if-layers = <3 1>;
+            then-layer = <5>;
         };
     };
 
@@ -86,7 +86,7 @@
         up2 {
             bindings = <&kp UP>;
             key-positions = <58 57 59>;
-            layers = <0 4>;
+            layers = <0 3>;
         };
 
         up3 {
@@ -104,7 +104,7 @@
         command_q {
             bindings = <&kp LG(DE_Q)>;
             key-positions = <18 19 20>;
-            layers = <4>;
+            layers = <3>;
         };
     };
 
@@ -465,35 +465,35 @@
         bt0_mac: bt0_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0 &to 4>;
+            bindings = <&bt BT_SEL 0 &to 3>;
             label = "BT0_MAC";
         };
 
         bt1_mac: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1 &to 4>;
+            bindings = <&bt BT_SEL 1 &to 3>;
             label = "NEW_MACRO";
         };
 
         bt2_mac: bt2_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 2 &to 4>;
+            bindings = <&bt BT_SEL 2 &to 3>;
             label = "BT2_MAC";
         };
 
         bt3_mac: bt3_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 3 &to 4>;
+            bindings = <&bt BT_SEL 3 &to 3>;
             label = "BT3_MAC";
         };
 
         bt4_mac: bt4_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 4 &to 4>;
+            bindings = <&bt BT_SEL 4 &to 3>;
             label = "BT4_MAC";
         };
 
@@ -600,24 +600,6 @@
             >;
         };
 
-        adjust_layer {
-            // ----------------------------------------------------------------------------------------------------------------------------
-            // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  | MAC  |      |       |      |       |       |
-            // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
-            // |        | RGB_BRD | RGB_BRI |         |         |         |                  |      |      |       |      |       |       |
-            // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
-            //                    |         |         |         |         |         | |      |      |      |       |      |
-
-            display-name = "adjust";
-            bindings = <
-&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                             &tog MAC  &none     &none     &none     &none     &mac_sleep
-&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF  &bt0_mac                          &bt1_mac  &bt2_mac  &bt3_mac  &bt4_mac  &none
-&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none            &bt0_win                          &bt1_win  &bt2_win  &bt3_win  &bt4_win  &none
-&none              &none            &none            &none            &none            &none            &rgb_ug RGB_TOG  &none  &none     &none     &none     &none     &none     &none
-                                    &none            &none            &none            &none            &none            &none  &none     &none     &none     &none
-            >;
-        };
-
         mac_layer {
             // Override keys whose AltGr combos differ between Windows DE and macOS DE.
             // All other positions are &trans (fall through to default_layer).
@@ -664,6 +646,24 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                        &kp LEFT       &trans            &trans               &kp BSPC  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LC(LEFT)  &kp LC(RIGHT)  &kp LC(LG(DE_F))  &trans               &trans    &macos_screen_selection
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans         &trans            &trans
+            >;
+        };
+
+        adjust_layer {
+            // ----------------------------------------------------------------------------------------------------------------------------
+            // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  | MAC  |      |       |      |       |       |
+            // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
+            // |        | RGB_BRD | RGB_BRI |         |         |         |                  |      |      |       |      |       |       |
+            // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
+            //                    |         |         |         |         |         | |      |      |      |       |      |
+
+            display-name = "adjust";
+            bindings = <
+&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                             &tog 3  &none     &none     &none     &none     &mac_sleep
+&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF  &bt0_mac                        &bt1_mac  &bt2_mac  &bt3_mac  &bt4_mac  &none
+&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none            &bt0_win                        &bt1_win  &bt2_win  &bt3_win  &bt4_win  &none
+&none              &none            &none            &none            &none            &none            &rgb_ug RGB_TOG  &none  &none   &none     &none     &none     &none     &none
+                                    &none            &none            &none            &none            &none            &none  &none   &none     &none     &none
             >;
         };
     };
