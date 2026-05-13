@@ -538,6 +538,13 @@
             bindings = <&kp LG(SPACE) &kp S &kp L &kp E &kp E &kp P &kp ENTER>;
             label = "MAC_SLEEP";
         };
+
+        windows_sleep: windows_sleep {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(DE_X) &kp DE_R &kp DE_R>;
+            label = "WINDOWS_SLEEP";
+        };
     };
 
     keymap {
@@ -573,7 +580,7 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&none   &none  &none   &none   &none   &none                                               &none             &none              &none     &none                &none     &none
+&none   &none  &none   &none   &none   &none                                               &none             &none              &none     &none                &none     &windows_sleep
 &trans  &none  &none   &none   &none   &none   &kp PG_UP                                                     &browser_tab_left  &kp UP    &browser_tab_rechts  &kp BSPC  &kp DEL
 &trans  &none  &none   &none   &none   &none   &kp PG_DN                                                     &kp LEFT           &kp DOWN  &kp RIGHT            &kp BSPC  &kp DEL
 &trans  &none  &none   &none   &none   &none   &volume_down_and_mute  &volume_up_and_mute  &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))  &none     &none                &none     &kp LS(LG(DE_S))
