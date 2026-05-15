@@ -9,6 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
 #define BASE 0
@@ -65,6 +66,7 @@
         double_thumb_enter {
             bindings = <&kp ENTER>;
             key-positions = <54 55>;
+            timeout-ms = <300>;
         };
 
         bottom_right_enter {
@@ -542,8 +544,15 @@
         windows_sleep: windows_sleep {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(DE_X) &kp DE_R &kp DE_R>;
+            bindings = <&kp LG(DE_X) &kp DE_R &kp DE_R &kp ENTER>;
             label = "WINDOWS_SLEEP";
+        };
+
+        scroll_down_5_tics: scroll_down_5_tics {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN &msc SCRL_DOWN &msc SCRL_DOWN &msc SCRL_DOWN &msc SCRL_DOWN>;
+            label = "SCROLL_DOWN_5_TICS";
         };
     };
 
@@ -582,7 +591,7 @@
             bindings = <
 &none   &none  &none   &none   &none   &none                                               &none             &none              &none     &none                &none     &windows_sleep
 &trans  &none  &none   &none   &none   &none   &kp PG_UP                                                     &browser_tab_left  &kp UP    &browser_tab_rechts  &kp BSPC  &kp DEL
-&trans  &none  &none   &none   &none   &none   &kp PG_DN                                                     &kp LEFT           &kp DOWN  &kp RIGHT            &kp BSPC  &kp DEL
+&trans  &none  &none   &none   &none   &none   &scroll_down_5_tics                                           &kp LEFT           &kp DOWN  &kp RIGHT            &kp BSPC  &kp DEL
 &trans  &none  &none   &none   &none   &none   &volume_down_and_mute  &volume_up_and_mute  &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))  &none     &none                &none     &kp LS(LG(DE_S))
                &trans  &trans  &trans  &trans  &trans                 &trans               &trans            &trans             &trans    &trans
             >;
