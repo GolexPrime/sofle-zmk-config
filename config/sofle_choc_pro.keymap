@@ -72,11 +72,13 @@
         bottom_right_enter {
             bindings = <&kp ENTER>;
             key-positions = <49 48>;
+            timeout-ms = <300>;
         };
 
         left_enter {
             bindings = <&kp ENTER>;
             key-positions = <54 53>;
+            timeout-ms = <300>;
         };
 
         up {
