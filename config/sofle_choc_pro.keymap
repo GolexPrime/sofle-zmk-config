@@ -87,10 +87,11 @@
             layers = <0>;
         };
 
-        up2 {
-            bindings = <&kp UP>;
+        arrow_enter {
+            bindings = <&kp ENTER>;
             key-positions = <58 57 59>;
             layers = <0 3>;
+            require-prior-idle-ms = <300>;
         };
 
         up3 {
@@ -108,6 +109,18 @@
         command_q {
             bindings = <&kp LG(DE_Q)>;
             key-positions = <18 19 20>;
+            layers = <3>;
+        };
+
+        alt_f4_2 {
+            bindings = <&kp LA(F4)>;
+            key-positions = <17 16 15>;
+            layers = <0>;
+        };
+
+        command_q_2 {
+            bindings = <&kp LG(DE_Q)>;
+            key-positions = <17 16 15>;
             layers = <3>;
         };
     };
