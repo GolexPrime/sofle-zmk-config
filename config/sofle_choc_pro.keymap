@@ -592,10 +592,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp F1                        &kp F2                &kp F3                        &kp F4                 &kp F5                       &kp F6                                                                   &kp F7                   &kp F8                      &kp F9                      &kp F10                   &kp F11                                      &kp F12
-&hold_tap DE_CARET ESC        &hold_tap DE_AT DE_Q  &kp W                         &kp E                  &kp R                        &kp T   &hold_tap DE_EXCLAMATION DE_Z                                                             &hold_tap DE_QUESTION DE_U  &hold_tap DE_DOLLAR DE_I    &hold_tap DE_PIPE DE_O    &hold_tap DE_AMPERSAND DE_P                  &kp BSPC
-&kp TAB                       &hold_tap LCTRL DE_A  &hold_and_esszett LEFT_ALT 0  &hold_tap LSHIFT DE_D  &hold_tap LEFT_CONTROL DE_F  &kp G   &kp H                                                                                     &hold_tap RCTRL DE_J        &hold_tap RIGHT_SHIFT DE_K  &hold_tap RIGHT_ALT DE_L  &hold_and_pipes_and_slashes RIGHT_CONTROL 0  &ticks
-&hold_and_left_shift LSHFT 0  &hold_tap DE_MU DE_Y  &kp X                         &kp C                  &kp V                        &kp B   &hold_and_media_links C_STOP 0  &hold_and_media_rechts C_MUTE 0  &hold_tap DE_TILDE DE_N  &hold_tap DE_MU DE_M        &comma                      &dot                      &minus                                       &hold_plus_asterisk RSHFT 0
+&kp F1                        &kp F2                &kp F3                        &kp F4                 &kp F5                       &kp F6                                                                   &kp F7                   &kp F8                      &kp F9                      &kp F10                   &kp F11                                     &kp F12
+&hold_tap DE_CARET ESC        &hold_tap DE_AT DE_Q  &kp W                         &kp E                  &kp R                        &kp T   &hold_tap DE_EXCLAMATION DE_Z                                                             &hold_tap DE_QUESTION DE_U  &hold_tap DE_DOLLAR DE_I    &hold_tap DE_PIPE DE_O    &hold_and_pipes_and_slashes DE_AMPERSAND 0  &kp BSPC
+&kp TAB                       &hold_tap LCTRL DE_A  &hold_and_esszett LEFT_ALT 0  &hold_tap LSHIFT DE_D  &hold_tap LEFT_CONTROL DE_F  &kp G   &kp H                                                                                     &hold_tap RCTRL DE_J        &hold_tap RIGHT_SHIFT DE_K  &hold_tap RIGHT_ALT DE_L  &hold_tap RIGHT_CONTROL DE_P                &ticks
+&hold_and_left_shift LSHFT 0  &hold_tap DE_MU DE_Y  &kp X                         &kp C                  &kp V                        &kp B   &hold_and_media_links C_STOP 0  &hold_and_media_rechts C_MUTE 0  &hold_tap DE_TILDE DE_N  &hold_tap DE_MU DE_M        &comma                      &dot                      &minus                                      &hold_plus_asterisk RSHFT 0
                                                     &kp LCTRL                     &kp LALT               &kp LCMD                     &mo 2   &kp SPACE                       &kp SPACE                        &mo 1                    &kp LEFT                    &kp DOWN                    &kp RIGHT
             >;
         };
@@ -650,10 +650,10 @@
 
             display-name = "mac";
             bindings = <
-&trans  &trans                &trans  &trans  &trans                   &trans                  &trans                &trans                    &trans  &trans                 &trans                                           &trans
-&trans  &hold_tap LA(L) DE_Q  &trans  &trans  &trans                   &trans  &trans                                &trans                    &trans  &hold_tap LA(N7) DE_O  &trans                                           &trans
-&trans  &trans                &trans  &trans  &hold_tap LEFT_GUI DE_F  &trans  &trans                                &hold_tap RIGHT_GUI DE_J  &trans  &trans                 &hold_and_pipes_and_slashes_mac RIGHT_CONTROL 0  &trans
-&trans  &trans                &trans  &trans  &trans                   &trans  &trans  &trans  &hold_tap LA(N) DE_N  &trans                    &trans  &trans                 &trans                                           &trans
+&trans  &trans                &trans  &trans  &trans                   &trans                  &trans                &trans                    &trans  &trans                 &trans                                          &trans
+&trans  &hold_tap LA(L) DE_Q  &trans  &trans  &trans                   &trans  &trans                                &trans                    &trans  &hold_tap LA(N7) DE_O  &hold_and_pipes_and_slashes_mac DE_AMPERSAND 0  &trans
+&trans  &trans                &trans  &trans  &hold_tap LEFT_GUI DE_F  &trans  &trans                                &hold_tap RIGHT_GUI DE_J  &trans  &trans                 &hold_tap RIGHT_CONTROL DE_P                    &trans
+&trans  &trans                &trans  &trans  &trans                   &trans  &trans  &trans  &hold_tap LA(N) DE_N  &trans                    &trans  &trans                 &trans                                          &trans
                               &trans  &trans  &trans                   &trans  &trans  &trans  &trans                &trans                    &trans  &trans
             >;
         };
