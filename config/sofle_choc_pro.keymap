@@ -133,7 +133,6 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            require-prior-idle-ms = <200>;
             flavor = "balanced";
             quick-tap-ms = <150>;
         };
@@ -549,20 +548,6 @@
             label = "BT4_WIN";
         };
 
-        mac_sleep: mac_sleep {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(SPACE) &kp S &kp L &kp E &kp E &kp P &kp ENTER>;
-            label = "MAC_SLEEP";
-        };
-
-        windows_sleep: windows_sleep {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(DE_X) &kp DE_R &kp DE_R &kp ENTER>;
-            label = "WINDOWS_SLEEP";
-        };
-
         scroll_down_5_tics: scroll_down_5_tics {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -592,11 +577,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp F1                        &kp F2                &kp F3                        &kp F4                 &kp F5                       &kp F6                                                                   &kp F7                   &kp F8                      &kp F9                      &kp F10                   &kp F11                                     &kp F12
-&hold_tap DE_CARET ESC        &hold_tap DE_AT DE_Q  &kp W                         &kp E                  &kp R                        &kp T   &hold_tap DE_EXCLAMATION DE_Z                                                             &hold_tap DE_QUESTION DE_U  &hold_tap DE_DOLLAR DE_I    &hold_tap DE_PIPE DE_O    &hold_and_pipes_and_slashes DE_AMPERSAND 0  &kp BSPC
-&kp TAB                       &hold_tap LCTRL DE_A  &hold_and_esszett LEFT_ALT 0  &hold_tap LSHIFT DE_D  &hold_tap LEFT_CONTROL DE_F  &kp G   &kp H                                                                                     &hold_tap RCTRL DE_J        &hold_tap RIGHT_SHIFT DE_K  &hold_tap RIGHT_ALT DE_L  &hold_tap RIGHT_CONTROL DE_P                &ticks
-&hold_and_left_shift LSHFT 0  &hold_tap DE_MU DE_Y  &kp X                         &kp C                  &kp V                        &kp B   &hold_and_media_links C_STOP 0  &hold_and_media_rechts C_MUTE 0  &hold_tap DE_TILDE DE_N  &hold_tap DE_MU DE_M        &comma                      &dot                      &minus                                      &hold_plus_asterisk RSHFT 0
-                                                    &kp LCTRL                     &kp LALT               &kp LCMD                     &mo 2   &kp SPACE                       &kp SPACE                        &mo 1                    &kp LEFT                    &kp DOWN                    &kp RIGHT
+&kp F1                        &kp F2                &kp F3                        &kp F4                 &kp F5                       &kp F6                                               &kp F7                   &kp F8                      &kp F9                      &kp F10                   &kp F11                                     &kp F12
+&hold_tap DE_CARET ESC        &hold_tap DE_AT DE_Q  &kp W                         &kp E                  &kp R                        &kp T   &hold_tap DE_EXCLAMATION DE_Z                                         &hold_tap DE_QUESTION DE_U  &hold_tap DE_DOLLAR DE_I    &hold_tap DE_PIPE DE_O    &hold_and_pipes_and_slashes DE_AMPERSAND 0  &kp BSPC
+&kp TAB                       &hold_tap LCTRL DE_A  &hold_and_esszett LEFT_ALT 0  &hold_tap LSHIFT DE_D  &hold_tap LEFT_CONTROL DE_F  &kp G   &kp H                                                                 &hold_tap RCTRL DE_J        &hold_tap RIGHT_SHIFT DE_K  &hold_tap RIGHT_ALT DE_L  &hold_tap RIGHT_CONTROL DE_P                &ticks
+&hold_and_left_shift LSHFT 0  &hold_tap DE_MU DE_Y  &kp X                         &kp C                  &kp V                        &kp B   &kp C_VOL_DN                   &kp C_VOL_UP  &hold_tap DE_TILDE DE_N  &hold_tap DE_MU DE_M        &comma                      &dot                      &minus                                      &hold_plus_asterisk RSHFT 0
+                                                    &kp LCTRL                     &kp LALT               &kp LCMD                     &mo 2   &kp SPACE                      &kp SPACE     &mo 1                    &kp LEFT                    &kp DOWN                    &kp RIGHT
             >;
         };
 
@@ -611,11 +596,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&none   &none  &none   &none   &none   &none                                         &none             &none              &none     &none                &none     &windows_sleep
-&trans  &none  &none   &none   &none   &none   &scroll_up_5_tics                                       &browser_tab_left  &kp UP    &browser_tab_rechts  &kp BSPC  &kp DEL
-&trans  &none  &none   &none   &none   &none   &scroll_down_5_tics                                     &kp LEFT           &kp DOWN  &kp RIGHT            &kp BSPC  &kp DEL
-&trans  &none  &none   &none   &none   &none   &kp C_VOL_DN         &kp C_VOLUME_UP  &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))  &none     &none                &none     &kp LS(LG(DE_S))
-               &trans  &trans  &trans  &trans  &trans               &trans           &trans            &trans             &trans    &trans
+&none   &none  &none   &none   &none   &none                                                                    &none             &none              &none     &none                &none     &none
+&trans  &none  &none   &none   &none   &none   &scroll_up_5_tics                                                                  &browser_tab_left  &kp UP    &browser_tab_rechts  &kp BSPC  &kp DEL
+&trans  &none  &none   &none   &none   &none   &scroll_down_5_tics                                                                &kp LEFT           &kp DOWN  &kp RIGHT            &kp BSPC  &kp DEL
+&trans  &none  &none   &none   &none   &none   &hold_and_media_links C_MUTE 0  &hold_and_media_rechts C_MUTE 0  &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))  &none     &none                &none     &kp LS(LG(DE_S))
+               &trans  &trans  &trans  &trans  &trans                          &trans                           &trans            &trans             &trans    &trans
             >;
         };
 
@@ -679,11 +664,11 @@
 
             display-name = "mac-ra";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans        &trans         &trans            &trans               &trans    &mac_sleep
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                        &trans         &trans            &browser_tab_rechts  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                        &kp LEFT       &trans            &trans               &kp BSPC  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LC(LEFT)  &kp LC(RIGHT)  &kp LC(LG(DE_F))  &trans               &trans    &macos_screen_selection
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans         &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans        &trans         &trans  &trans               &trans            &none
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                        &trans         &trans  &browser_tab_rechts  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                        &kp LEFT       &trans  &trans               &kp BSPC          &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LC(LEFT)  &kp LC(RIGHT)  &trans  &trans               &kp LC(LG(DE_F))  &macos_screen_selection
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans         &trans  &trans
             >;
         };
 
