@@ -481,70 +481,70 @@
         bt0_mac: bt0_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0 &to 3>;
+            bindings = <&bt BT_SEL 0 &to 3 &out OUT_BLE>;
             label = "BT0_MAC";
         };
 
         bt1_mac: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1 &to 3>;
+            bindings = <&bt BT_SEL 1 &to 3 &out OUT_BLE>;
             label = "NEW_MACRO";
         };
 
         bt2_mac: bt2_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 2 &to 3>;
+            bindings = <&bt BT_SEL 2 &to 3 &out OUT_BLE>;
             label = "BT2_MAC";
         };
 
         bt3_mac: bt3_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 3 &to 3>;
+            bindings = <&bt BT_SEL 3 &to 3 &out OUT_BLE>;
             label = "BT3_MAC";
         };
 
         bt4_mac: bt4_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 4 &to 3>;
+            bindings = <&bt BT_SEL 4 &to 3 &out OUT_BLE>;
             label = "BT4_MAC";
         };
 
         bt0_win: bt0_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0 &to 0>;
+            bindings = <&bt BT_SEL 0 &to 0 &out OUT_BLE>;
             label = "BT0_WIN";
         };
 
         bt1_win: bt1_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1 &to 0>;
+            bindings = <&bt BT_SEL 1 &to 0 &out OUT_BLE>;
             label = "BT1_WIN";
         };
 
         bt2_win: bt2_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 2 &to 0>;
+            bindings = <&bt BT_SEL 2 &to 0 &out OUT_BLE>;
             label = "BT2_WIN";
         };
 
         bt3_win: bt3_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 3 &to 0>;
+            bindings = <&bt BT_SEL 3 &to 0 &out OUT_BLE>;
             label = "BT3_WIN";
         };
 
         bt4_win: bt4_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 4 &to 0>;
+            bindings = <&bt BT_SEL 4 &to 0 &out OUT_BLE>;
             label = "BT4_WIN";
         };
 
