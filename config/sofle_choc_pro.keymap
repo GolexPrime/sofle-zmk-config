@@ -150,7 +150,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "DOT";
             #binding-cells = <0>;
-            bindings = <&kp DE_DOT>, <&kp DE_COLON>;
+            bindings = <&kp DE_DOT>, <&kp DE_COLON>, <&tripple_dot>;
 
             tapping-term-ms = <300>;
         };
@@ -561,6 +561,20 @@
             bindings = <&msc SCRL_UP &msc SCRL_UP &msc SCRL_UP &msc SCRL_UP &msc SCRL_UP>;
             label = "SCROLL_UP_5_TICS";
         };
+
+        tripple_dot: tripple_dot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp DOT &kp DOT>;
+            label = "TRIPPLE_DOT";
+        };
+
+        switch_to_hardwired_windows: switch_to_hardwired_windows {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&out OUT_USB &to 0>;
+            label = "SWITCH_TO_HARDWIRED_WINDOWS";
+        };
     };
 
     keymap {
@@ -682,11 +696,11 @@
 
             display-name = "adjust";
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                        &none  &none     &none     &none     &none     &none
-&ext_power EP_TOG  &none         &none         &none         &none         &none         &bt0_mac                     &bt1_mac  &bt2_mac  &bt3_mac  &bt4_mac  &none
-&none              &none         &none         &none         &none         &none         &bt0_win                     &bt1_win  &bt2_win  &bt3_win  &bt4_win  &none
-&none              &none         &none         &none         &none         &none         &out OUT_TOG  &tog 3  &none  &none     &none     &none     &none     &none
-                                 &none         &none         &none         &none         &none         &none   &none  &none     &none     &none
+&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                        &none  &none     &none     &none     &none     &none
+&ext_power EP_TOG  &none         &none         &none         &none         &none         &bt0_mac                                     &bt1_mac  &bt2_mac  &bt3_mac  &bt4_mac  &none
+&none              &none         &none         &none         &none         &none         &bt0_win                                     &bt1_win  &bt2_win  &bt3_win  &bt4_win  &none
+&none              &none         &none         &none         &none         &none         &switch_to_hardwired_windows  &tog 3  &none  &none     &none     &none     &none     &none
+                                 &none         &none         &none         &none         &none                         &none   &none  &none     &none     &none
             >;
         };
     };
