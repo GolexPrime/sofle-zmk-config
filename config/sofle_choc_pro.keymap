@@ -28,7 +28,7 @@
 
         adjust_layer {
             if-layers = <2 1>;
-            then-layer = <6>;
+            then-layer = <7>;
         };
 
         mac_lower_layer {
@@ -44,24 +44,6 @@
 
     combos {
         compatible = "zmk,combos";
-
-        Umlaut_A {
-            bindings = <&kp DE_A_UMLAUT>;
-            key-positions = <25 15>;
-            timeout-ms = <200>;
-        };
-
-        Umlaut_U {
-            bindings = <&kp DE_U_UMLAUT>;
-            key-positions = <15 19>;
-            timeout-ms = <200>;
-        };
-
-        Umlaut_O {
-            bindings = <&kp DE_O_UMLAUT>;
-            key-positions = <15 21>;
-            timeout-ms = <200>;
-        };
 
         double_thumb_enter {
             bindings = <&kp ENTER>;
@@ -123,6 +105,12 @@
             key-positions = <17 16 15>;
             layers = <3>;
         };
+
+        shift_index_fingers {
+            bindings = <&sk LEFT_SHIFT>;
+            key-positions = <28 31>;
+            layers = <0 3>;
+        };
     };
 
     behaviors {
@@ -132,7 +120,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             flavor = "balanced";
             quick-tap-ms = <150>;
         };
@@ -468,6 +456,18 @@
             #binding-cells = <2>;
             tapping-term-ms = <300>;
         };
+
+        hold_tap_e: hold_tap_e {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_E";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <150>;
+        };
     };
 
     macros {
@@ -592,7 +592,7 @@
 
             bindings = <
 &kp F1                        &kp F2                &kp F3                          &kp F4                   &kp F5                       &kp F6                                               &kp F7                   &kp F8                      &kp F9                    &kp F10                     &kp F11                                     &kp F12
-&hold_tap DE_CARET ESC        &hold_tap DE_AT DE_Q  &kp W                           &kp E                    &kp R                        &kp T   &hold_tap DE_EXCLAMATION DE_Z                                         &hold_tap DE_QUESTION DE_U  &hold_tap DE_DOLLAR DE_I  &hold_tap DE_PIPE DE_O      &hold_and_pipes_and_slashes DE_AMPERSAND 0  &kp BSPC
+&hold_tap DE_CARET ESC        &hold_tap DE_AT DE_Q  &kp W                           &hold_tap_e 6 DE_E       &kp R                        &kp T   &hold_tap DE_EXCLAMATION DE_Z                                         &hold_tap DE_QUESTION DE_U  &hold_tap DE_DOLLAR DE_I  &hold_tap DE_PIPE DE_O      &hold_and_pipes_and_slashes DE_AMPERSAND 0  &kp BSPC
 &kp TAB                       &hold_tap LCTRL DE_A  &hold_and_esszett LEFT_SHIFT 0  &hold_tap LEFT_ALT DE_D  &hold_tap LEFT_CONTROL DE_F  &kp G   &kp H                                                                 &hold_tap RCTRL DE_J        &hold_tap RIGHT_ALT DE_K  &hold_tap RIGHT_SHIFT DE_L  &hold_tap RIGHT_CONTROL DE_P                &ticks
 &hold_and_left_shift LSHFT 0  &hold_tap DE_MU DE_Y  &kp X                           &kp C                    &kp V                        &kp B   &kp C_VOL_DN                   &kp C_VOL_UP  &hold_tap DE_TILDE DE_N  &hold_tap DE_MU DE_M        &comma                    &dot                        &minus                                      &hold_plus_asterisk RSHFT 0
                                                     &kp LCTRL                       &kp LALT                 &kp LCMD                     &mo 2   &kp SPACE                      &kp SPACE     &mo 1                    &kp LEFT                    &kp DOWN                  &kp RIGHT
@@ -683,6 +683,16 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                        &kp LEFT       &trans  &trans               &kp BSPC          &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LC(LEFT)  &kp LC(RIGHT)  &trans  &trans               &kp LC(LG(DE_F))  &macos_screen_selection
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans         &trans  &trans
+            >;
+        };
+
+        umlaut {
+            bindings = <
+&trans  &trans           &trans  &trans    &trans  &trans                  &trans  &trans           &trans  &trans           &trans  &trans
+&trans  &trans           &trans  &kp DE_E  &trans  &trans  &trans                  &kp DE_U_UMLAUT  &trans  &kp DE_O_UMLAUT  &trans  &trans
+&trans  &kp DE_A_UMLAUT  &trans  &trans    &trans  &trans  &trans                  &trans           &trans  &trans           &trans  &trans
+&trans  &trans           &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans           &trans  &trans
+                         &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans
             >;
         };
 
