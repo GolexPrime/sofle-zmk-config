@@ -571,6 +571,13 @@ af/*
             bindings = <&out OUT_USB &to 0>;
             label = "SWITCH_TO_HARDWIRED_WINDOWS";
         };
+
+        mac_delete: mac_delete {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(DELETE)>;
+            label = "MAC_DELETE";
+        };
     };
 
     keymap {
@@ -675,7 +682,7 @@ af/*
             display-name = "mac-ra";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans        &trans         &trans  &trans               &trans            &none
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                        &trans         &trans  &browser_tab_rechts  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                        &trans         &trans  &browser_tab_rechts  &trans            &kp LG(DELETE)
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                        &kp LEFT       &trans  &trans               &kp BSPC          &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LC(LEFT)  &kp LC(RIGHT)  &trans  &trans               &kp LC(LG(DE_F))  &macos_screen_selection
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans         &trans  &trans
