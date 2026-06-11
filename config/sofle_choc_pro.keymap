@@ -3,7 +3,6 @@ af/*
 *
 * SPDX-License-Identifier: MIT
 */
-
 #include "keys_de.h"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -52,7 +51,7 @@ af/*
         };
 
         bottom_right_enter {
-            bindings = <&kp ENTER>;
+            bindings = <&kp ESCAPE>;
             key-positions = <49 48>;
             timeout-ms = <300>;
         };
@@ -66,20 +65,17 @@ af/*
         up {
             bindings = <&kp UP>;
             key-positions = <58 57>;
-            layers = <0>;
         };
 
         arrow_enter {
             bindings = <&kp ENTER>;
             key-positions = <58 57 59>;
-            layers = <0 3>;
             require-prior-idle-ms = <300>;
         };
 
         up3 {
             bindings = <&kp UP>;
             key-positions = <58 59>;
-            layers = <0>;
         };
 
         alt_f4 {
