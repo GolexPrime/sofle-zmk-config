@@ -1,4 +1,4 @@
-/*
+af/*
 * Copyright (c) 2020 The ZMK Contributors
 *
 * SPDX-License-Identifier: MIT
@@ -355,7 +355,7 @@
             compatible = "zmk,behavior-caps-word";
             label = "CAPS_WORDS_MANUAL";
             #binding-cells = <0>;
-            continue-list = <UNDERSCORE BACKSPACE DELETE MINUS UNDER>;
+            continue-list = <DE_MINUS DE_UNDERSCORE UNDERSCORE BACKSPACE DELETE MINUS UNDER>;
         };
 
         leftshift: leftshift {
