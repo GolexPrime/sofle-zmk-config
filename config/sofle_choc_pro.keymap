@@ -614,10 +614,10 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&none   &none  &none   &none   &none   &none                                                                    &none             &none                &none     &none                &none     &none
-&trans  &none  &none   &none   &none   &none   &browser_tab_left                                                                  &browser_tab_rechts  &kp UP    &browser_tab_rechts  &kp BSPC  &kp DEL
-&trans  &none  &none   &none   &none   &none   &none                                                                              &kp LEFT             &kp DOWN  &kp RIGHT            &kp BSPC  &kp DEL
-&trans  &none  &none   &none   &none   &none   &hold_and_media_links C_MUTE 0  &hold_and_media_rechts C_MUTE 0  &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))    &none     &none                &none     &kp LS(LG(DE_S))
+&none   &none  &none   &none   &none   &none                                                                    &none             &none                &none     &none      &none     &none
+&trans  &none  &none   &none   &none   &none   &browser_tab_left                                                                  &browser_tab_rechts  &kp UP    &none      &kp BSPC  &kp DEL
+&trans  &none  &none   &none   &none   &none   &none                                                                              &kp LEFT             &kp DOWN  &kp RIGHT  &kp BSPC  &kp DEL
+&trans  &none  &none   &none   &none   &none   &hold_and_media_links C_MUTE 0  &hold_and_media_rechts C_MUTE 0  &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))    &none     &none      &none     &kp LS(LG(DE_S))
                &trans  &trans  &trans  &trans  &trans                          &trans                           &trans            &trans               &trans    &trans
             >;
         };
