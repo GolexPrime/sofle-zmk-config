@@ -595,11 +595,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp F1                        &kp F2                &kp F3                          &kp F4                   &kp F5                       &kp F6                                                             &kp F7                   &kp F8                      &kp F9                       &kp F10                     &kp F11                                  &kp F12
-&hold_tap DE_CARET ESC        &hold_tap DE_AT DE_Q  &kp W                           &hold_tap_e 6 DE_E       &kp R                        &kp T                 &hold_tap DE_EXCLAMATION DE_Z                                         &hold_tap DE_QUESTION DE_U  &hold_tap DE_AMPERSAND DE_I  &hold_tap DE_PIPE DE_O      &hold_and_pipes_and_slashes DE_DOLLAR 0  &kp BSPC
-&kp TAB                       &hold_tap LCTRL DE_A  &hold_and_esszett LEFT_SHIFT 0  &hold_tap LEFT_ALT DE_D  &hold_tap LEFT_CONTROL DE_F  &hold_tap DE_AT DE_G  &hold_tap DE_EQUAL DE_H                                               &hold_tap RCTRL DE_J        &hold_tap RIGHT_ALT DE_K     &hold_tap RIGHT_SHIFT DE_L  &hold_tap RIGHT_CONTROL DE_P             &ticks
-&hold_and_left_shift LSHFT 0  &hold_tap DE_MU DE_Y  &kp X                           &kp C                    &kp V                        &kp B                 &kp C_VOL_DN                   &kp C_VOL_UP  &hold_tap DE_TILDE DE_N  &hold_tap DE_MU DE_M        &comma                       &dot                        &minus                                   &hold_plus_asterisk RSHFT 0
-                                                    &kp LCTRL                       &kp LALT                 &kp LCMD                     &mo 2                 &kp SPACE                      &kp SPACE     &mo 1                    &kp LEFT                    &kp DOWN                     &kp RIGHT
+&kp F1                        &kp F2                &kp F3                          &kp F4                   &kp F5                       &kp F6                                                 &kp F7                   &kp F8                      &kp F9                       &kp F10                     &kp F11                                  &kp F12
+&hold_tap DE_CARET ESC        &hold_tap DE_AT DE_Q  &kp W                           &hold_tap_e 6 DE_E       &kp R                        &kp T     &hold_tap DE_EXCLAMATION DE_Z                                         &hold_tap DE_QUESTION DE_U  &hold_tap DE_AMPERSAND DE_I  &hold_tap DE_PIPE DE_O      &hold_and_pipes_and_slashes DE_DOLLAR 0  &kp BSPC
+&kp TAB                       &hold_tap LCTRL DE_A  &hold_and_esszett LEFT_SHIFT 0  &hold_tap LEFT_ALT DE_D  &hold_tap LEFT_CONTROL DE_F  &kp DE_G  &hold_tap DE_EQUAL DE_H                                               &hold_tap RCTRL DE_J        &hold_tap RIGHT_ALT DE_K     &hold_tap RIGHT_SHIFT DE_L  &hold_tap RIGHT_CONTROL DE_P             &ticks
+&hold_and_left_shift LSHFT 0  &hold_tap DE_MU DE_Y  &kp X                           &kp C                    &kp V                        &kp B     &kp C_VOL_DN                   &kp C_VOL_UP  &hold_tap DE_TILDE DE_N  &hold_tap DE_MU DE_M        &comma                       &dot                        &minus                                   &hold_plus_asterisk RSHFT 0
+                                                    &kp LCTRL                       &kp RIGHT_ALT            &kp LCMD                     &mo 2     &kp SPACE                      &kp SPACE     &mo 1                    &kp LEFT                    &kp DOWN                     &kp RIGHT
             >;
         };
 
@@ -634,7 +634,7 @@
 
             bindings = <
 &none   &none         &none         &none      &none      &none                                &none   &none          &none            &none         &none         &none
-&trans  &kp BSPC      &mal_geteilt  &kp DE_N7  &kp DE_N8  &kp DE_N9  &spitze_klammern                  &klammer       &eckige_klammer  &geschweifte  &kp DE_EQUAL  &none
+&trans  &kp BSPC      &mal_geteilt  &kp DE_N7  &kp DE_N8  &kp DE_N9  &spitze_klammern                  &klammer       &eckige_klammer  &geschweifte  &kp DE_EQUAL  &trans
 &trans  &kp DEL       &plus_minus   &kp DE_N4  &kp DE_N5  &kp DE_N6  &none                             &questionmark  &dollar          &percent      &kp DE_EQUAL  &none
 &trans  &kp DE_EQUAL  &dot_coma     &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_N0         &none   &none   &none          &none            &none         &none         &none
                       &trans        &trans     &trans     &trans     &trans            &trans  &trans  &trans         &trans           &trans
@@ -654,9 +654,9 @@
             display-name = "mac";
             bindings = <
 &trans  &trans                   &trans  &trans  &trans                       &trans                  &trans                &trans                        &trans  &trans                 &trans                                       &trans
-&trans  &hold_tap LA(L) DE_Q     &trans  &trans  &trans                       &trans  &trans                                &trans                        &trans  &hold_tap LA(N7) DE_O  &hold_and_pipes_and_slashes_mac DE_DOLLAR 0  &trans
+&trans  &hold_tap RA(L) DE_Q     &trans  &trans  &trans                       &trans  &trans                                &trans                        &trans  &hold_tap RA(N7) DE_O  &hold_and_pipes_and_slashes_mac DE_DOLLAR 0  &trans
 &trans  &hold_tap LEFT_GUI DE_A  &trans  &trans  &hold_tap LEFT_CONTROL DE_F  &trans  &trans                                &hold_tap RIGHT_CONTROL DE_J  &trans  &trans                 &hold_tap RIGHT_GUI DE_P                     &trans
-&trans  &trans                   &trans  &trans  &trans                       &trans  &trans  &trans  &hold_tap LA(N) DE_N  &trans                        &trans  &trans                 &trans                                       &trans
+&trans  &trans                   &trans  &trans  &trans                       &trans  &trans  &trans  &hold_tap RA(N) DE_N  &trans                        &trans  &trans                 &trans                                       &trans
                                  &trans  &trans  &trans                       &trans  &trans  &trans  &trans                &trans                        &trans  &trans
             >;
         };
