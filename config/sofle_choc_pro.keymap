@@ -108,6 +108,11 @@
             key-positions = <28 31>;
             layers = <0 3>;
         };
+
+        gentle_smile {
+            bindings = <&gentle_smile>;
+            key-positions = <12 13>;
+        };
     };
 
     behaviors {
@@ -573,11 +578,32 @@
             label = "SWITCH_TO_HARDWIRED_WINDOWS";
         };
 
-        mac_delete: mac_delete {
+        gentle_smile: gentle_smile {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(DELETE)>;
-            label = "MAC_DELETE";
+            bindings = <&kp CARET &kp CARET>;
+            label = "GENTLE_SMILE";
+        };
+
+        sweat_smile: sweat_smile {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COLON &kp S &kp W &kp E &kp A &kp T &kp UNDER &kp S &kp M &kp I &kp L &kp E &kp COLON>;
+            label = "SWEAT_SMILE";
+        };
+
+        thinking: thinking {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COLON &kp T &kp H &kp I &kp N &kp K &kp I &kp N &kp G &kp COLON>;
+            label = "THINKING";
+        };
+
+        smirk: smirk {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COLON &kp S &kp M &kp I &kp R &kp K &kp COLON>;
+            label = "SMIRK";
         };
     };
 
@@ -633,11 +659,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&none   &none         &none         &none      &none      &none                                &none   &none          &none            &none         &none         &none
-&trans  &kp BSPC      &mal_geteilt  &kp DE_N7  &kp DE_N8  &kp DE_N9  &spitze_klammern                  &klammer       &eckige_klammer  &geschweifte  &kp DE_EQUAL  &trans
-&trans  &kp DEL       &plus_minus   &kp DE_N4  &kp DE_N5  &kp DE_N6  &none                             &questionmark  &dollar          &percent      &kp DE_EQUAL  &none
-&trans  &kp DE_EQUAL  &dot_coma     &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_N0         &none   &none   &none          &none            &none         &none         &none
-                      &trans        &trans     &trans     &trans     &trans            &trans  &trans  &trans         &trans           &trans
+&none   &none         &none         &none      &none      &none                                &none      &none          &none            &none         &none         &none
+&trans  &kp BSPC      &mal_geteilt  &kp DE_N7  &kp DE_N8  &kp DE_N9  &spitze_klammern                     &klammer       &eckige_klammer  &geschweifte  &kp DE_EQUAL  &trans
+&trans  &kp DEL       &plus_minus   &kp DE_N4  &kp DE_N5  &kp DE_N6  &none                                &questionmark  &dollar          &percent      &kp DE_EQUAL  &none
+&trans  &kp DE_EQUAL  &dot_coma     &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_N0         &none   &thinking  &smirk         &sweat_smile     &none         &none         &none
+                      &trans        &trans     &trans     &trans     &trans            &trans  &trans     &trans         &trans           &trans
             >;
         };
 
