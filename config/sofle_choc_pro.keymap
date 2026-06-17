@@ -566,28 +566,28 @@
         gentle_smile: gentle_smile {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp CARET &kp CARET>;
+            bindings = <&kp DE_CARET &kp DE_CARET>;
             label = "GENTLE_SMILE";
         };
 
         sweat_smile: sweat_smile {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp COLON &kp S &kp W &kp E &kp A &kp T &kp UNDER &kp S &kp M &kp I &kp L &kp E &kp COLON>;
+            bindings = <&kp DE_COLON &kp S &kp W &kp E &kp A &kp T &kp DE_UNDERSCORE &kp S &kp M &kp I &kp L &kp E &kp DE_COLON>;
             label = "SWEAT_SMILE";
         };
 
         thinking: thinking {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp COLON &kp T &kp H &kp I &kp N &kp K &kp I &kp N &kp G &kp COLON>;
+            bindings = <&kp DE_COLON &kp T &kp H &kp I &kp N &kp K &kp I &kp N &kp G &kp DE_COLON>;
             label = "THINKING";
         };
 
         smirk: smirk {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp COLON &kp S &kp M &kp I &kp R &kp K &kp COLON>;
+            bindings = <&kp DE_COLON &kp S &kp M &kp I &kp R &kp K &kp DE_COLON>;
             label = "SMIRK";
         };
     };
